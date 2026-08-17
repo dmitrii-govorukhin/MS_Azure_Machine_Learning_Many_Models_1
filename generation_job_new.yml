@@ -1,0 +1,35 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+display_name: many-models-data-generation
+compute: azureml:mm-train-cluster
+
+jobs:
+  generate_step:
+    type: parallel
+    inputs:
+      input_data:
+        type: mltable
+        path: azureml:base-series-seed-mltable:1
+        mode: ro_mount
+    outputs:
+      generated_data:
+        type: uri_folder
+        mode: rw_mount
+
+    input_data: ${{inputs.input_data}}
+    mini_batch_size: "256kb"
+    resources:
+      instance_count: 100
+    max_concurrency_per_instance: 1
+    mini_batch_error_threshold: 10
+    logging_level: "INFO"
+
+    task:
+      type: run_function
+      code: "./src"
+      entry_script: entry_script.py
+      environment:
+        conda_file: ./environment/conda_env.yml
+        image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu22.04
+      program_arguments: "--output_path ${{outputs.generated_data}}"
+      append_row_to: ${{outputs.generated_data}}
