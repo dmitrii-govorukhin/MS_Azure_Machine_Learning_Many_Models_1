@@ -21,7 +21,7 @@ The **many-models-data-generation** project file structure:
  - data_asset_seed.yml - Data Asset description for registration
  - generation_job.yml - parallel job description
 
-**Results / Key Findings:** A cluster of 4 dedicated Standard_F2s_v2 (2 cores, 4 GB RAM, 16 GB disk) virtual machines was used to solve this task. The resulting Parquet dataset, stored in a BLOB storage, contains ~10⁷ records. 
+**Results / Key Findings:** A cluster of 8 dedicated Standard_F2s_v2 (2 cores, 4 GB RAM, 16 GB disk) virtual machines was used to solve this task. The resulting Parquet dataset, stored in a BLOB storage, contains ~10⁷ records. 
 
 **Illustrations**: Job Iterations, Dataset Size, Project Cost 😪
 
