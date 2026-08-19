@@ -9,8 +9,8 @@ jobs:
     inputs:
       input_data:
         type: mltable
-        path: azureml:base-series-seed-mltable:1
-        mode: ro_mount
+        path: azureml:base-series-seed:@latest
+        mode: direct
     outputs:
       generated_data:
         type: uri_folder
