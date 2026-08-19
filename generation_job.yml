@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
 display_name: many-models-data-generation
-compute: azureml:mm-train-cluster
+compute: azureml:compute-instance-cluster
 
 jobs:
   generate_step:
@@ -17,11 +17,14 @@ jobs:
         mode: rw_mount
 
     input_data: ${{inputs.input_data}}
-    mini_batch_size: "256kb"
+    mini_batch_size: "30"
     resources:
-      instance_count: 100
-    max_concurrency_per_instance: 1
-    mini_batch_error_threshold: 10
+      instance_count: 8
+    max_concurrency_per_instance: 2
+    mini_batch_error_threshold: 3
+    retry_settings:
+      max_retries: 2
+      timeout: 300
     logging_level: "INFO"
 
     task:
