@@ -6,6 +6,7 @@ dependencies:
   - pip
   - pip:
       - pandas
+      - pyarrow
       - mltable
       - azureml-core
       - azureml-dataset-runtime
