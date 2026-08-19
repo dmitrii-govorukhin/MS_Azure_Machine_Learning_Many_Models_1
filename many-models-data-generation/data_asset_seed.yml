@@ -1,0 +1,7 @@
+# описание Data Asset для регистрации
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+name: base-series-seed-mltable-2
+version: "1"
+type: mltable
+path: ./data
+description: Basic CSV — time series generation seed (MLTable), actual version
