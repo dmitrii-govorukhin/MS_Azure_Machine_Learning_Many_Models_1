@@ -24,12 +24,11 @@ The **many-models-data-generation** project file structure:
 **Results / Key Findings:** A cluster of 4 dedicated Standard_F2s_v2 (2 cores, 4 GB RAM, 16 GB disk) virtual machines was used to solve this task. The resulting Parquet dataset, stored in a BLOB storage, contains ~10⁷ records. 
 
 **Illustrations**:
-
+- Job Iterations
 ![alt text](https://github.com/dmitrii-govorukhin/MS_Azure_Machine_Learning_Many_Models/blob/main/img/Job_Iterations.png?raw=true)
-Job Iterations
 
+- Dataset Size
 ![alt text](https://github.com/dmitrii-govorukhin/MS_Azure_Machine_Learning_Many_Models/blob/main/img/Dataset_size.png?raw=true)
-Dataset Size
 
-![alt text](https://github.com/dmitrii-govorukhin/MS_Azure_Machine_Learning_Many_Models/blob/main/img/Project Cost.png?raw=true)
-Project Cost
+- Project Cost
+![alt text](https://github.com/dmitrii-govorukhin/MS_Azure_Machine_Learning_Many_Models/blob/main/img/Project_Cost.png?raw=true)
